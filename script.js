@@ -3,6 +3,8 @@
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
 
+        
+
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
@@ -16,6 +18,20 @@
             });
         });
 
+        // Cerrar menú al hacer clic fuera del nav o hamburguesa
+        document.addEventListener('click', function (event) {
+            const isClickInsideMenu = navMenu.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+
+            if (!isClickInsideMenu && !isClickOnHamburger && navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+
+
+        
         // Scroll animations
         const observerOptions = {
             threshold: 0.1,
@@ -220,3 +236,145 @@ function contactWhatsApp(servicio) {
     const whatsappURL = `https://wa.me/+51964431281?text=${encodeURIComponent(mensaje)}`;
     window.open(whatsappURL, '_blank');
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Efectos para la sección de Introducción
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar las animaciones al hacer scroll
+    initAOS();
+    
+    // Efecto de parallax para los shapes
+    const introSection = document.querySelector('.intro');
+    const shapes = document.querySelectorAll('.intro-shape');
+    
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset;
+        
+        if (introSection) {
+            const introOffset = introSection.offsetTop;
+            const introHeight = introSection.offsetHeight;
+            
+            // Solo aplicar el efecto cuando la sección intro está visible
+            if (scrollTop >= introOffset - window.innerHeight && scrollTop <= introOffset + introHeight) {
+                const scrollFactor = (scrollTop - (introOffset - window.innerHeight)) / (introHeight + window.innerHeight);
+                
+                shapes.forEach((shape, index) => {
+                    const speed = 0.2 + (index * 0.1);
+                    const yPos = scrollFactor * 100 * speed;
+                    shape.style.transform = `translateY(${yPos}px)`;
+                });
+            }
+        }
+    });
+    
+    // Efecto de hover 3D para la imagen
+    const imageWrapper = document.querySelector('.image-wrapper');
+    
+    if (imageWrapper) {
+        imageWrapper.addEventListener('mousemove', function(e) {
+            const { left, top, width, height } = this.getBoundingClientRect();
+            const x = (e.clientX - left) / width - 0.5;
+            const y = (e.clientY - top) / height - 0.5;
+            
+            this.style.transform = `perspective(1000px) rotateY(${x * 5}deg) rotateX(${y * -5}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+        
+        imageWrapper.addEventListener('mouseleave', function() {
+            this.style.transform = 'perspective(1000px) rotateY(0) rotateX(0) scale3d(1, 1, 1)';
+        });
+    }
+    
+    // Efecto de contador para los años de experiencia
+    const yearsElement = document.querySelector('.experience-badge .years');
+    
+    if (yearsElement) {
+        const text = yearsElement.textContent;
+        const hasPlus = text.includes('+');
+        let target = parseInt(text.replace('+', ''));
+        const duration = 2000; // 2 segundos
+        const step = target / (duration / 16); // 60fps
+        let current = 0;
+        
+        function animateCounter() {
+            yearsElement.textContent = '0' + (hasPlus ? '+' : '');
+            
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    clearInterval(timer);
+                    yearsElement.textContent = target + (hasPlus ? '+' : '');
+                } else {
+                    yearsElement.textContent = Math.floor(current) + (hasPlus ? '+' : '');
+                }
+            }, 16);
+        }
+        
+        // Función para verificar si un elemento está visible en la ventana
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+        
+        // Iniciar animación cuando el elemento sea visible
+        function checkVisibility() {
+            if (isElementInViewport(yearsElement) && !yearsElement.classList.contains('animated')) {
+                animateCounter();
+                yearsElement.classList.add('animated');
+            }
+        }
+        
+        // Verificar visibilidad al cargar y al hacer scroll
+        window.addEventListener('load', checkVisibility);
+        window.addEventListener('scroll', checkVisibility);
+    }
+    
+    // Inicializar AOS (Animate On Scroll)
+    function initAOS() {
+        // Simular la funcionalidad básica de AOS
+        const animatedElements = document.querySelectorAll('[data-aos]');
+        
+        function checkElements() {
+            animatedElements.forEach(element => {
+                if (isElementInViewport(element)) {
+                    element.classList.add('aos-animate');
+                    
+                    // Aplicar delay si existe
+                    const delay = element.getAttribute('data-aos-delay');
+                    if (delay) {
+                        element.style.transitionDelay = `${delay}ms`;
+                    }
+                }
+            });
+        }
+        
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8
+            );
+        }
+        
+        // Verificar elementos al cargar y al hacer scroll
+        window.addEventListener('load', checkElements);
+        window.addEventListener('scroll', checkElements);
+        
+        // Verificar inicialmente después de un pequeño retraso
+        setTimeout(checkElements, 100);
+    }
+});
