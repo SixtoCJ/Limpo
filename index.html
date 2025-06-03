@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIMPO - Servicios de Limpieza Profesionales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">LIMPO</div>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                    </ul>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+                <div class="cta-button">
+                    <a class="contacto" href="#contacto">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </header>
+                            
+
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hacemos que tus <span class="highlight">espacios brillen</span></h1>
+                    <p>Servicios de limpieza profesional para hogares y oficinas. Transformamos tu espacio con atención al detalle y productos de calidad premium.</p>
+                    <div class="hero-buttons">
+                        <a href="#servicios" class="btn">Nuestros Servicios</a>
+                        <a href="#contacto" class="btn btn-outline">Cotizar Ahora</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Servicios de limpieza profesional">
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Servicios -->
+<section id="servicios" class="services">
+    <div class="container">
+        <div class="section-header scroll-animate">
+            <span class="section-badge">Nuestros Servicios</span>
+            <h2>Soluciones de Limpieza Completas</h2>
+            <p>Ofrecemos una amplia gama de servicios de limpieza profesional adaptados a tus necesidades específicas.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card scroll-animate">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Limpieza Residencial">
+                    <div class="service-overlay">
+                        <i class="fas fa-home"></i>
+                    </div>
+                </div>
+                <h3>Limpieza Residencial</h3>
+                <p>Mantenemos tu hogar impecable con servicios personalizados que se adaptan a tu estilo de vida y horarios.</p>
+                <button class="btn" onclick="openModal('modal-residencial')">Información</button>
+            </div>
+            
+            <div class="service-card scroll-animate">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Limpieza Comercial">
+                    <div class="service-overlay">
+                        <i class="fas fa-building"></i>
+                    </div>
+                </div>
+                <h3>Limpieza Comercial</h3>
+                <p>Creamos ambientes de trabajo limpios y saludables que aumentan la productividad y bienestar de tu equipo.</p>
+                <button class="btn" onclick="openModal('modal-comercial')">Información</button>
+            </div>
+            
+            <div class="service-card scroll-animate">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Limpieza Profunda">
+                    <div class="service-overlay">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                </div>
+                <h3>Limpieza Profunda</h3>
+                <p>Eliminamos la suciedad acumulada y los alérgenos con nuestro servicio de limpieza intensiva y detallada.</p>
+                <button class="btn" onclick="openModal('modal-profunda')">Información</button>
+            </div>
+            
+            <div class="service-card scroll-animate">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Limpieza de Ventanas">
+                    <div class="service-overlay">
+                        <i class="fas fa-window-maximize"></i>
+                    </div>
+                </div>
+                <h3>Limpieza de Ventanas</h3>
+                <p>Dejamos tus ventanas cristalinas para que disfrutes de vistas despejadas y mayor entrada de luz natural.</p>
+                <button class="btn" onclick="openModal('modal-ventanas')">Información</button>
+            </div>
+            
+            <div class="service-card scroll-animate">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Limpieza de Tapicería">
+                    <div class="service-overlay">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                </div>
+                <h3>Limpieza de Tapicería</h3>
+                <p>Renovamos y desinfectamos tus muebles tapizados con técnicas especializadas y productos seguros.</p>
+                <button class="btn" onclick="openModal('modal-tapiceria')">Información</button>
+            </div>
+            
+            <div class="service-card scroll-animate">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Post-Construcción">
+                    <div class="service-overlay">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                </div>
+                <h3>Post-Construcción</h3>
+                <p>Limpieza especializada después de obras y remodelaciones para dejar tu espacio listo para habitar.</p>
+                <button class="btn" onclick="openModal('modal-construccion')">Información</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modales -->
+<!-- Modal Limpieza Residencial -->
+<div id="modal-residencial" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal-residencial')">&times;</span>
+        <div class="modal-header">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Limpieza Residencial">
+            <h2>Limpieza Residencial</h2>
+        </div>
+        <div class="modal-body">
+            <div class="modal-description">
+                <h3>Servicios Incluidos:</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Limpieza completa de todas las habitaciones</li>
+                    <li><i class="fas fa-check"></i> Aspirado y trapeado de pisos</li>
+                    <li><i class="fas fa-check"></i> Limpieza de baños y cocina</li>
+                    <li><i class="fas fa-check"></i> Desempolvado de muebles y superficies</li>
+                    <li><i class="fas fa-check"></i> Limpieza de espejos y vidrios</li>
+                    <li><i class="fas fa-check"></i> Organización básica de espacios</li>
+                </ul>
+                <div class="modal-features">
+                    <div class="feature">
+                        <i class="fas fa-clock"></i>
+                        <span>Horarios flexibles</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-leaf"></i>
+                        <span>Productos ecológicos</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Personal verificado</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-gallery">
+                <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sala limpia">
+                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dormitorio limpio">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" onclick="contactWhatsApp('Limpieza Residencial')">Solicitar Cotización</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Limpieza Comercial -->
+<div id="modal-comercial" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal-comercial')">&times;</span>
+        <div class="modal-header">
+            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Limpieza Comercial">
+            <h2>Limpieza Comercial</h2>
+        </div>
+        <div class="modal-body">
+            <div class="modal-description">
+                <h3>Servicios Incluidos:</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Limpieza de oficinas y espacios de trabajo</li>
+                    <li><i class="fas fa-check"></i> Desinfección de áreas comunes</li>
+                    <li><i class="fas fa-check"></i> Limpieza de baños corporativos</li>
+                    <li><i class="fas fa-check"></i> Mantenimiento de salas de reuniones</li>
+                    <li><i class="fas fa-check"></i> Limpieza de recepción y lobby</li>
+                    <li><i class="fas fa-check"></i> Gestión de residuos</li>
+                </ul>
+                <div class="modal-features">
+                    <div class="feature">
+                        <i class="fas fa-calendar"></i>
+                        <span>Servicio programado</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-users"></i>
+                        <span>Equipo especializado</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-certificate"></i>
+                        <span>Certificaciones</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-gallery">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Oficina moderna">
+                <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Espacio de trabajo">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" onclick="contactWhatsApp('Limpieza Comercial')">Solicitar Cotización</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Limpieza Profunda -->
+<div id="modal-profunda" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal-profunda')">&times;</span>
+        <div class="modal-header">
+            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Limpieza Profunda">
+            <h2>Limpieza Profunda</h2>
+        </div>
+        <div class="modal-body">
+            <div class="modal-description">
+                <h3>Servicios Incluidos:</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Limpieza detallada de todas las superficies</li>
+                    <li><i class="fas fa-check"></i> Desinfección completa de espacios</li>
+                    <li><i class="fas fa-check"></i> Limpieza de electrodomésticos por dentro y fuera</li>
+                    <li><i class="fas fa-check"></i> Eliminación de manchas difíciles</li>
+                    <li><i class="fas fa-check"></i> Limpieza de zócalos y marcos</li>
+                    <li><i class="fas fa-check"></i> Tratamiento anti-ácaros y bacterias</li>
+                </ul>
+                <div class="modal-features">
+                    <div class="feature">
+                        <i class="fas fa-microscope"></i>
+                        <span>Limpieza microscópica</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-virus-slash"></i>
+                        <span>Eliminación de gérmenes</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-sparkles"></i>
+                        <span>Resultado impecable</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-gallery">
+                <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Limpieza detallada">
+                <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Desinfección">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" onclick="contactWhatsApp('Limpieza Profunda')">Solicitar Cotización</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Limpieza de Ventanas -->
+<div id="modal-ventanas" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal-ventanas')">&times;</span>
+        <div class="modal-header">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Limpieza de Ventanas">
+            <h2>Limpieza de Ventanas</h2>
+        </div>
+        <div class="modal-body">
+            <div class="modal-description">
+                <h3>Servicios Incluidos:</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Limpieza interior y exterior de ventanas</li>
+                    <li><i class="fas fa-check"></i> Limpieza de marcos y rieles</li>
+                    <li><i class="fas fa-check"></i> Eliminación de manchas de agua</li>
+                    <li><i class="fas fa-check"></i> Limpieza de mosquiteros</li>
+                    <li><i class="fas fa-check"></i> Pulido de vidrios</li>
+                    <li><i class="fas fa-check"></i> Tratamiento anti-manchas</li>
+                </ul>
+                <div class="modal-features">
+                    <div class="feature">
+                        <i class="fas fa-eye"></i>
+                        <span>Visibilidad perfecta</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-sun"></i>
+                        <span>Más luz natural</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-tools"></i>
+                        <span>Equipo especializado</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-gallery">
+                <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Ventanas limpias">
+                <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Vista clara">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" onclick="contactWhatsApp('Limpieza de Ventanas')">Solicitar Cotización</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Limpieza de Tapicería -->
+<div id="modal-tapiceria" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal-tapiceria')">&times;</span>
+        <div class="modal-header">
+            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Limpieza de Tapicería">
+            <h2>Limpieza de Tapicería</h2>
+        </div>
+        <div class="modal-body">
+            <div class="modal-description">
+                <h3>Servicios Incluidos:</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Limpieza profunda de sofás y sillones</li>
+                    <li><i class="fas fa-check"></i> Eliminación de manchas y olores</li>
+                    <li><i class="fas fa-check"></i> Tratamiento anti-ácaros</li>
+                    <li><i class="fas fa-check"></i> Limpieza de alfombras y tapetes</li>
+                    <li><i class="fas fa-check"></i> Desinfección de telas</li>
+                    <li><i class="fas fa-check"></i> Protección de fibras</li>
+                </ul>
+                <div class="modal-features">
+                    <div class="feature">
+                        <i class="fas fa-heart"></i>
+                        <span>Cuidado delicado</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shield-virus"></i>
+                        <span>Eliminación de alérgenos</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-magic"></i>
+                        <span>Renovación completa</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-gallery">
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sofá limpio">
+                <img src="https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Alfombra limpia">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" onclick="contactWhatsApp('Limpieza de Tapicería')">Solicitar Cotización</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Post-Construcción -->
+<div id="modal-construccion" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal-construccion')">&times;</span>
+        <div class="modal-header">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Post-Construcción">
+            <h2>Limpieza Post-Construcción</h2>
+        </div>
+        <div class="modal-body">
+            <div class="modal-description">
+                <h3>Servicios Incluidos:</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Eliminación de polvo y escombros</li>
+                    <li><i class="fas fa-check"></i> Limpieza de residuos de construcción</li>
+                    <li><i class="fas fa-check"></i> Pulido de pisos nuevos</li>
+                    <li><i class="fas fa-check"></i> Limpieza de ventanas y marcos</li>
+                    <li><i class="fas fa-check"></i> Desinfección completa</li>
+                    <li><i class="fas fa-check"></i> Preparación para habitabilidad</li>
+                </ul>
+                <div class="modal-features">
+                    <div class="feature">
+                        <i class="fas fa-hard-hat"></i>
+                        <span>Especialistas en construcción</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-home"></i>
+                        <span>Listo para habitar</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-broom"></i>
+                        <span>Limpieza exhaustiva</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-gallery">
+                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Construcción terminada">
+                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Espacio renovado">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" onclick="contactWhatsApp('Limpieza Post-Construcción')">Solicitar Cotización</button>
+        </div>
+    </div>
+</div>
+
+    <!-- Galería -->
+    <section id="galeria" class="gallery">
+        <div class="container">
+            <div class="section-header scroll-animate">
+                <span class="section-badge">Nuestro Trabajo</span>
+                <h2>Galería de Resultados</h2>
+                <p>Mira la transformación que logramos en cada uno de nuestros proyectos de limpieza.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item scroll-animate">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cocina limpia">
+                    <div class="gallery-overlay">
+                        <h4>Cocinas Impecables</h4>
+                    </div>
+                </div>
+                <div class="gallery-item scroll-animate">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Baño limpio">
+                    <div class="gallery-overlay">
+                        <h4>Baños Relucientes</h4>
+                    </div>
+                </div>
+                <div class="gallery-item scroll-animate">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Oficina limpia">
+                    <div class="gallery-overlay">
+                        <h4>Oficinas Profesionales</h4>
+                    </div>
+                </div>
+                <div class="gallery-item scroll-animate">
+                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sala de estar">
+                    <div class="gallery-overlay">
+                        <h4>Espacios Acogedores</h4>
+                    </div>
+                </div>
+                <div class="gallery-item scroll-animate">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dormitorio">
+                    <div class="gallery-overlay">
+                        <h4>Dormitorios Frescos</h4>
+                    </div>
+                </div>
+                <div class="gallery-item scroll-animate">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ventanas limpias">
+                    <div class="gallery-overlay">
+                        <h4>Ventanas Cristalinas</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estadísticas -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item scroll-animate">
+                    <div class="stat-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="stat-number" data-target="2500">0</div>
+                    <div class="stat-label">Hogares Atendidos</div>
+                </div>
+                <div class="stat-item scroll-animate">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number" data-target="150">0</div>
+                    <div class="stat-label">Clientes Satisfechos</div>
+                </div>
+                <div class="stat-item scroll-animate">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="stat-number" data-target="8">0</div>
+                    <div class="stat-label">Años de Experiencia</div>
+                </div>
+                <div class="stat-item scroll-animate">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-number" data-target="98">0</div>
+                    <div class="stat-label">% Satisfacción</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonios" class="testimonials">
+        <div class="container">
+            <div class="section-header scroll-animate">
+                <span class="section-badge">Testimonios</span>
+                <h2>Lo Que Dicen Nuestros Clientes</h2>
+                <p>La satisfacción de nuestros clientes es nuestra mayor recompensa.</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-avatar">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Cliente">
+                    </div>
+                    <div class="testimonial-text">
+                        "LIMPO ha transformado completamente mi hogar. Su atención al detalle es excepcional y siempre llegan puntuales. No puedo imaginar mi vida sin su servicio."
+                    </div>
+                    <div class="testimonial-author">María González</div>
+                    <div class="testimonial-role">Cliente Residencial</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Cliente">
+                    </div>
+                    <div class="testimonial-text">
+                        "Contratamos LIMPO para nuestra oficina y el cambio ha sido increíble. Nuestros empleados están más motivados en un ambiente tan limpio y profesional."
+                    </div>
+                    <div class="testimonial-author">Carlos Mendoza</div>
+                    <div class="testimonial-role">Gerente General</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Cliente">
+                    </div>
+                    <div class="testimonial-text">
+                        "La limpieza profunda que realizaron después de mi mudanza fue perfecta. Cada rincón quedó impecable. Definitivamente los recomiendo al 100%."
+                    </div>
+                    <div class="testimonial-author">Ana Rodríguez</div>
+                    <div class="testimonial-role">Cliente Residencial</div>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <button class="testimonial-btn prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="testimonial-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+                <button class="testimonial-btn next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="section-header scroll-animate">
+                <span class="section-badge">Contacto</span>
+                <h2>¿Listo para un Espacio Impecable?</h2>
+                <p>Contáctanos hoy mismo y obtén una cotización personalizada para tus necesidades de limpieza.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info scroll-animate">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>+51 964 431 281</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Ubicación</h4>
+                            <p>Lima, Perú</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Horarios</h4>
+                            <p>Lun - Sáb: 8:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Garantía</h4>
+                            <p>100% Satisfacción Garantizada</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form scroll-animate">
+                    <h3>Solicita tu Cotización</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Teléfono" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Selecciona un servicio</option>
+                                <option value="residencial">Limpieza Residencial</option>
+                                <option value="comercial">Limpieza Comercial</option>
+                                <option value="profunda">Limpieza Profunda</option>
+                                <option value="ventanas">Limpieza de Ventanas</option>
+                                <option value="tapiceria">Limpieza de Tapicería</option>
+                                <option value="construccion">Post-Construcción</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Describe tus necesidades específicas" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Enviar Solicitud</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">LIMPO</div>
+                    <p>Hacemos que tus espacios brillen con servicios de limpieza profesional de la más alta calidad.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#servicios">Limpieza Residencial</a></li>
+                        <li><a href="#servicios">Limpieza Comercial</a></li>
+                        <li><a href="#servicios">Limpieza Profunda</a></li>
+                        <li><a href="#servicios">Limpieza de Ventanas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li>WhatsApp: +51 964 431 281</li>
+                        <li>Lima, Perú</li>
+                        <li>Lun - Sáb: 8:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LIMPO. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/+51964431281" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
