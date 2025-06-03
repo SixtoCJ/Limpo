@@ -16,6 +16,7 @@
     --shadow: 0 15px 35px rgba(47, 65, 87, 0.1);
     --shadow-hover: 0 25px 50px rgba(47, 65, 87, 0.2);
     --transition: all 0.3s ease;
+    --border-radius: 15px;
 }
 
 html {
@@ -113,6 +114,7 @@ body {
     }
 }
 
+
 /* Header */
 header {
     position: fixed;
@@ -124,23 +126,45 @@ header {
     z-index: 1000;
     transition: var(--transition);
     box-shadow: 0 2px 20px rgba(47, 65, 87, 0.1);
+    height: 100px; /* o el valor que desees */
+    position: fixed; /* si es sticky */
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 0 20px;       /* padding horizontal */
+    height: 100px;         /* igual al header */
 }
 
+
+
+
 .logo {
-    font-size: 32px;
-    font-weight: 800;
-    background: var(--primary-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    z-index: 1001;
+  height: 80px;        /* Altura fija para el contenedor del logo */
+  width: auto;         /* Ancho automático según el contenido o el diseño */
+  display: flex;       /* Para centrar la imagen si quieres */
+  align-items: center; /* Centrar verticalmente la imagen */
+  overflow: hidden;    /* Evitar que el contenido se salga */
+}
+
+.logoF {
+  max-height: 200px;    /* Que la imagen no exceda la altura del contenedor */
+  width: auto;         /* Mantiene proporción */
+  display: block;      /* Elimina espacio blanco debajo de la imagen */
+}
+
+
+
+.logo-img {
+    height: 200px;        /* Hace que la imagen se ajuste al alto del contenedor padre */
+    max-height: 200px;    /* Límite para evitar que crezca demasiado */
+    width: auto;
+    object-fit: contain;
+    margin-top: 25px;
+    cursor: pointer;
+    margin-left: 0;
 }
 
 .nav-menu {
@@ -178,7 +202,8 @@ header {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    z-index: 1001;
+    z-index: 2001; /* Mayor z-index para estar sobre el sidebar */
+    position: relative;
 }
 
 .hamburger span {
@@ -219,9 +244,9 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(3px);
-    z-index: 998;
+    z-index: 1500; /* Z-index entre header y sidebar */
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
@@ -248,7 +273,7 @@ header {
     cursor: pointer;
     align-items: center;
     justify-content: center;
-    z-index: 1001;
+    z-index: 2001;
     transition: var(--transition);
 }
 
@@ -454,6 +479,159 @@ section {
     max-width: 600px;
     margin: 0 auto;
 }
+
+
+
+
+
+
+
+
+/* Introducción */
+.intro {
+    position: relative;
+    padding: 100px 0;
+    background-color: var(--white);
+    overflow: hidden;
+    width: 100%;
+}
+
+.intro-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+}
+
+.intro-image {
+    flex: 1;
+    position: relative;
+}
+
+.image-wrapper {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.image-wrapper:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(15, 184, 178, 0.2);
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: var(--transition);
+}
+
+.intro-text {
+    flex: 1;
+}
+
+.intro-description {
+    font-size: 18px;
+    color: var(--light-text);
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+    cursor: pointer;
+
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: var(--transition);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+}
+
+.feature-item:hover {
+    box-shadow: var(--shadow);
+    transform: translateY(-5px);
+}
+
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 5px 15px rgba(15, 184, 178, 0.2);
+    transition: var(--transition);
+}
+
+
+.feature-icon i {
+    color: var(--primary-gradient);
+    font-size: 24px;
+    transition: var(--transition);
+}
+
+.feature-text h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.feature-text p {
+    color: var(--light-text);
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: 30px;
+    left: -20px;
+    background: var(--primary-gradient);
+    color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    min-width: 120px;
+    text-align: center;
+}
+
+.experience-badge .years {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.experience-badge .text {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+
+
+
+
+
 
 /* Servicios */
 .services {
@@ -1101,7 +1279,7 @@ footer {
     transform: translateY(0);
 }
 
-/* ===== RESPONSIVE NAVBAR ===== */
+/* ===== RESPONSIVE NAVBAR MEJORADO ===== */
 @media (min-width: 1200px) {
     .container {
         max-width: 1140px;
@@ -1142,40 +1320,60 @@ footer {
         display: flex;
     }
     
+    /* Ocultar logo principal cuando el menú está activo */
+    .nav-menu.active ~ .logo {
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    /* Ocultar botón de contacto cuando el menú está activo */
+    .nav-menu.active ~ .cta-button {
+        opacity: 0;
+        visibility: hidden;
+    }
+    
     .nav-menu {
         position: fixed;
         top: 0;
-        left: -300px; /* Inicialmente fuera de la pantalla */
-        width: 300px; /* Ancho fijo para el sidebar */
+        left: -320px; /* Inicialmente fuera de la pantalla */
+        width: 320px; /* Ancho fijo para el sidebar */
         height: 100vh;
         background: var(--white);
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
         padding: 80px 0 30px 0;
-        transition: left 0.3s ease;
-        z-index: 999;
-        box-shadow: 5px 0 25px rgba(47, 65, 87, 0.15);
+        transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        z-index: 2000; /* Z-index más alto que el header */
+        box-shadow: 5px 0 25px rgba(47, 65, 87, 0.2);
         overflow-y: auto;
+        
     }
     
     .nav-menu.active {
         left: 0;
     }
     
-    /* Cabecera del sidebar */
-    .nav-menu::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 80px;
-        background: var(--primary-gradient);
-    }
+.nav-menu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: 
+        var(--primary-gradient),
+        url('img/LOGO.png');
+background-size: cover, 200px auto;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    background-blend-mode: overlay; /* Mezcla el gradiente con la imagen */
+    z-index: 1;
+}
+
+
     
     .nav-menu::after {
-        content: 'LIMPO';
         position: absolute;
         top: 0;
         left: 0;
@@ -1188,6 +1386,7 @@ footer {
         font-size: 24px;
         font-weight: 800;
         letter-spacing: 2px;
+        z-index: 2;
     }
     
     .nav-menu li {
@@ -1205,13 +1404,35 @@ footer {
     .nav-menu a {
         display: block;
         width: 100%;
-        padding: 15px 30px;
+        padding: 18px 30px;
         border-bottom: 1px solid rgba(47, 65, 87, 0.1);
+        transition: var(--transition);
+        position: relative;
+    }
+    
+    .nav-menu a::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(47, 65, 87, 0.1), rgba(77, 153, 190, 0.1));
+        transition: width 0.3s ease;
+    }
+    
+    .nav-menu a:hover::before {
+        width: 100%;
+    }
+    
+    .nav-menu a::after {
+        display: none;
     }
     
     .nav-menu a:hover {
+        color: var(--secondary-color);
+        padding-left: 40px;
         background: rgba(77, 153, 190, 0.05);
-        padding-left: 35px;
     }
     
     /* Animación del hamburger */
@@ -1256,8 +1477,8 @@ footer {
     }
     
     .nav-menu {
-        width: 280px;
-        left: -280px;
+        width: 300px;
+        left: -300px;
     }
     
     .hero-text h1 {
@@ -1294,8 +1515,8 @@ footer {
 
 @media (max-width: 575px) {
     .nav-menu {
-        width: 250px;
-        left: -250px;
+        width: 280px;
+        left: -280px;
     }
     
     .hero-text h1 {
