@@ -149,45 +149,6 @@
         document.querySelector('.contact-form form').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
-            const formData = new FormData(this);
-            const name = this.querySelector('input[type="text"]').value;
-            const phone = this.querySelector('input[type="tel"]').value;
-            const email = this.querySelector('input[type="email"]').value;
-            const service = this.querySelector('select').value;
-            const message = this.querySelector('textarea').value;
-            
-            // Create WhatsApp message
-            const whatsappMessage = `¡Hola! Me interesa solicitar una cotización para servicios de limpieza.
-
-*Datos de contacto:*
-• Nombre: ${name}
-• Teléfono: ${phone}
-• Email: ${email}
-• Servicio: ${service}
-
-*Mensaje:*
-${message}
-
-¡Espero su respuesta!`;
-            
-            // Open WhatsApp
-            const whatsappURL = `https://wa.me/+51964431281?text=${encodeURIComponent(whatsappMessage)}`;
-            window.open(whatsappURL, '_blank');
-            
-            // Reset form
-            this.reset();
-            
-            // Show success message
-            alert('¡Gracias! Te estamos redirigiendo a WhatsApp para completar tu solicitud.');
-        });
-
-        // Add loading animation
-        window.addEventListener('load', () => {
-            document.body.classList.add('loaded');
-        });
-    
-
 
 
         // JavaScript para Modales
@@ -230,12 +191,6 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-// Función para contactar por WhatsApp desde modal
-function contactWhatsApp(servicio) {
-    const mensaje = `¡Hola! Me interesa obtener más información sobre el servicio de ${servicio}. ¿Podrían enviarme una cotización personalizada?`;
-    const whatsappURL = `https://wa.me/+51964431281?text=${encodeURIComponent(mensaje)}`;
-    window.open(whatsappURL, '_blank');
-}
 
 
 
